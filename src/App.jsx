@@ -1,9 +1,7 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import App1 from "./components/App1.jsx";
+import App1 from "./components/App1/App1.jsx";
 
 function App() {
   return (
