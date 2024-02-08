@@ -1,0 +1,75 @@
+/* Shahar.css */
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.students-container,
+.details-container,
+.add-new-student-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.students-container h2,
+.details-container h2,
+.add-new-student-container h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.students-container ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.students-container li {
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.students-container li:hover {
+  background-color: #f0f0f0;
+}
+
+.add-new-student-container label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.add-new-student-container input[type="text"],
+.add-new-student-container input[type="email"],
+.add-new-student-container input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.add-new-student-container button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.add-new-student-container button[type="submit"]:hover {
+  background-color: #0056b3;
+}
