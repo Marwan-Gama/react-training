@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./App1.css";
 import StudentsList from "./StudentsList";
-import StudentDetails from "./StudentDetails";
 import AddNewStudent from "./AddNewStudent";
+import EditStudentDetails from "./EditStudentDetails";
 
 const App1 = () => {
   const [selectedStudent, setSelectedStudent] = useState(null);
+  const [showAddNewStudent, setShowAddNewStudent] = useState(false);
   const [students, setStudents] = useState([
     { id: 1, name: "John", email: "john@example.com", age: 25 },
     { id: 2, name: "Jane", email: "jane@example.com", age: 28 },
@@ -22,11 +23,40 @@ const App1 = () => {
     setStudents([...students, { ...newStudent, id: students.length + 1 }]);
   };
 
+  const toggleAddNewStudent = () => {
+    setShowAddNewStudent((prev) => !prev);
+  };
+
+  const onUpdateStudent = (updatedStudent) => {
+    const updatedStudents = students.map((student) =>
+      student.id === updatedStudent.id ? updatedStudent : student
+    );
+    setStudents(updatedStudents);
+    setSelectedStudent(updatedStudent);
+  };
+
   return (
     <div className="app-container">
-      <StudentsList students={students} onSelectStudent={handleSelectStudent} />
-      <StudentDetails selectedStudent={selectedStudent} />
-      <AddNewStudent onAddStudent={handleAddStudent} />
+      <div className="students-list-container">
+        <StudentsList
+          students={students}
+          onSelectStudent={handleSelectStudent}
+        />
+      </div>
+
+      <div className="details-container">
+        <EditStudentDetails
+          selectedStudent={selectedStudent}
+          onUpdateStudent={onUpdateStudent}
+        />
+      </div>
+
+      <div className="add-new-student-container">
+        <button onClick={toggleAddNewStudent} className="toggle-btn">
+          {showAddNewStudent ? "Hide Add Student" : "Show Add Student"}
+        </button>
+        {showAddNewStudent && <AddNewStudent onAddStudent={handleAddStudent} />}
+      </div>
     </div>
   );
 };

@@ -1,3 +1,5 @@
+/* App1.css */
+
 .app-container {
   display: flex;
   justify-content: center;
@@ -8,7 +10,8 @@
 
 .students-container,
 .details-container,
-.add-new-student-container {
+.add-new-student-container,
+.edit-details {
   background-color: #f8f9fa;
   padding: 20px;
   border-radius: 8px;
@@ -18,7 +21,8 @@
 
 .students-container h2,
 .details-container h2,
-.add-new-student-container h2 {
+.add-new-student-container h2,
+.edit-details h2 {
   margin-top: 0;
   margin-bottom: 15px;
   color: #333;
@@ -30,7 +34,8 @@
   margin: 0;
 }
 
-.students-container li {
+.students-container li,
+.details-container p {
   padding: 10px 0;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -40,7 +45,8 @@
   background-color: #f0f0f0;
 }
 
-.add-new-student-container label {
+.add-new-student-container label,
+.edit-details label {
   display: block;
   margin-bottom: 8px;
   color: #555;
@@ -48,7 +54,10 @@
 
 .add-new-student-container input[type="text"],
 .add-new-student-container input[type="email"],
-.add-new-student-container input[type="number"] {
+.add-new-student-container input[type="number"],
+.edit-details input[type="text"],
+.edit-details input[type="email"],
+.edit-details input[type="number"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 12px;
@@ -57,7 +66,10 @@
   box-sizing: border-box;
 }
 
-.add-new-student-container button[type="submit"] {
+.add-new-student-container button[type="submit"],
+.edit-details button[type="submit"],
+.add-new-student-container button[type="button"],
+.edit-details button[type="button"] {
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -68,6 +80,9 @@
   width: 100%;
 }
 
-.add-new-student-container button[type="submit"]:hover {
+.add-new-student-container button[type="submit"]:hover,
+.edit-details button[type="submit"]:hover,
+.add-new-student-container button[type="button"]:hover,
+.edit-details button[type="button"]:hover {
   background-color: #0056b3;
 }

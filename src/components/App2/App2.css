@@ -1,0 +1,20 @@
+.App {
+  text-align: center;
+}
+
+.repo {
+  margin: 20px;
+  text-align: center;
+}
+
+.repo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.repos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
