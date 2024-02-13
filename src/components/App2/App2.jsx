@@ -5,10 +5,17 @@ function App2() {
   const [repos, setRepos] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.github.com/repositories")
-      .then((response) => response.json())
-      .then((data) => setRepos(data))
-      .catch((error) => console.error("Error fetching data:", error));
+    async function fetchRepositories() {
+      try {
+        const response = await fetch("https://api.github.com/repositories");
+        const data = await response.json();
+        setRepos(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+
+    fetchRepositories();
   }, []);
 
   return (
